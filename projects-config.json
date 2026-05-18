@@ -1,0 +1,38 @@
+{
+  "repos": [
+    {
+      "owner": "sharmavipin1608",
+      "repo": "ClaudeTemplate",
+      "status": "live",
+      "url": "https://sharmavipin1608.github.io/ClaudeTemplate/",
+      "tags": ["open-source", "template"],
+      "featured": true
+    },
+    {
+      "owner": "sharmavipin1608",
+      "repo": "interview-prep-agent",
+      "status": "live",
+      "url": "http://interview-prep.duckdns.org",
+      "tags": ["open-source"]
+    },
+    {
+      "owner": "sharmavipin1608",
+      "repo": "JobsApplicationTracker",
+      "status": "live",
+      "tags": ["open-source"]
+    },
+    {
+      "owner": "sharmavipin1608",
+      "repo": "JobTracker-UI-v0",
+      "status": "live",
+      "url": "https://v0-job-tracker-ui-v0.vercel.app",
+      "tags": ["open-source"]
+    },
+    {
+      "owner": "sharmavipin1608",
+      "repo": "FinancialPlayground",
+      "status": "in-flight",
+      "tags": ["open-source"]
+    }
+  ]
+}

@@ -1,0 +1,76 @@
+<h2>What's the terminal aesthetic?</h2>
+<p class="subtitle">Phase 1 is a terminal/mission control showcase. Which direction feels right?</p>
+
+<div class="cards">
+
+  <div class="card" data-choice="retro" onclick="toggleSelect(this)">
+    <div class="card-image" style="background:#0a0a0a;font-family:'Courier New',monospace;padding:16px;color:#00ff41;font-size:12px;line-height:1.6;border-radius:6px;min-height:140px;">
+      <div style="color:#00ff41;margin-bottom:8px;">▓▓▓ VIPIN TAWDE // ENGINEERING PORTFOLIO ▓▓▓</div>
+      <div>$ <span style="color:#fff">list projects --status=active</span></div>
+      <div style="margin-top:6px;color:#00ff41;">
+        <div>[LIVE]  llm-orchestration-engine  ████████  v2.1</div>
+        <div>[LIVE]  claude-code-template       ████████  v1.0</div>
+        <div>[WIP]   rag-pipeline               ████░░░░  60%</div>
+        <div>[IDEA]  distributed-cache          ░░░░░░░░  backlog</div>
+      </div>
+      <div style="margin-top:8px;color:#666;">───────────────────────────────────</div>
+      <div style="color:#00ff41;">4 projects · 2 live · 1 in-flight · 1 backlog</div>
+    </div>
+    <div class="card-body">
+      <h3>A — Retro Terminal</h3>
+      <p>Classic green-on-black CRT aesthetic. Pure ASCII art, monospaced everything, progress bars made of block characters. Feels like hacker lore meets mission control.</p>
+    </div>
+  </div>
+
+  <div class="card" data-choice="dark-ide" onclick="toggleSelect(this)">
+    <div class="card-image" style="background:#1e1e2e;padding:16px;border-radius:6px;font-family:'SF Mono','Fira Code',monospace;font-size:12px;color:#cdd6f4;min-height:140px;">
+      <div style="display:flex;gap:8px;margin-bottom:12px;">
+        <span style="background:#313244;padding:2px 10px;border-radius:4px;color:#89b4fa;font-size:11px;">PROJECTS</span>
+        <span style="background:#313244;padding:2px 10px;border-radius:4px;color:#6c7086;font-size:11px;">METRICS</span>
+        <span style="background:#313244;padding:2px 10px;border-radius:4px;color:#6c7086;font-size:11px;">SYSTEM</span>
+      </div>
+      <div style="display:grid;gap:6px;">
+        <div style="background:#313244;padding:8px 12px;border-radius:6px;display:flex;justify-content:space-between;align-items:center;">
+          <span>llm-orchestration-engine</span>
+          <span style="background:#a6e3a1;color:#1e1e2e;padding:2px 8px;border-radius:10px;font-size:10px;">LIVE</span>
+        </div>
+        <div style="background:#313244;padding:8px 12px;border-radius:6px;display:flex;justify-content:space-between;align-items:center;">
+          <span>rag-pipeline</span>
+          <span style="background:#f9e2af;color:#1e1e2e;padding:2px 8px;border-radius:10px;font-size:10px;">WIP</span>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>B — Dark IDE Dashboard</h3>
+      <p>Catppuccin/VS Code inspired. Monospace font, tabbed panels, syntax-colored status badges. Modern dark UI that engineers recognize immediately from their daily tools.</p>
+    </div>
+  </div>
+
+  <div class="card" data-choice="hybrid" onclick="toggleSelect(this)">
+    <div class="card-image" style="background:#0d1117;padding:16px;border-radius:6px;font-family:'SF Mono',monospace;font-size:12px;color:#e6edf3;min-height:140px;">
+      <div style="color:#58a6ff;font-size:13px;font-weight:bold;margin-bottom:10px;letter-spacing:2px;">MISSION CONTROL</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;">
+        <div style="border:1px solid #30363d;border-radius:6px;padding:10px;">
+          <div style="color:#3fb950;font-size:10px;letter-spacing:1px;">● LIVE</div>
+          <div style="margin-top:4px;font-size:11px;">llm-orchestration</div>
+          <div style="color:#8b949e;font-size:10px;margin-top:2px;">→ yoursite.com</div>
+        </div>
+        <div style="border:1px solid #30363d;border-radius:6px;padding:10px;">
+          <div style="color:#d29922;font-size:10px;letter-spacing:1px;">◐ IN FLIGHT</div>
+          <div style="margin-top:4px;font-size:11px;">rag-pipeline</div>
+          <div style="color:#8b949e;font-size:10px;margin-top:2px;">60% complete</div>
+        </div>
+      </div>
+      <div style="margin-top:8px;color:#8b949e;font-size:10px;border-top:1px solid #21262d;padding-top:6px;">
+        $ status --all  |  last sync: just now
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>C — Mission Control Hybrid</h3>
+      <p>GitHub dark palette meets NASA mission control. Bento grid cards with terminal prompt accents. Structured like a status board — each project is a tile, not a list item.</p>
+    </div>
+  </div>
+
+</div>
+
+<p class="subtitle" style="margin-top:16px;">Click to select your preferred direction. You can change your mind.</p>
