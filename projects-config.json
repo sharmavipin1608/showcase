@@ -1,0 +1,23 @@
+{
+  "repos": [
+    {
+      "owner": "YOUR_GITHUB_USERNAME",
+      "repo": "YOUR_FEATURED_REPO",
+      "status": "live",
+      "url": "https://your-live-url.vercel.app",
+      "tags": ["open-source"],
+      "featured": true
+    },
+    {
+      "owner": "YOUR_GITHUB_USERNAME",
+      "repo": "YOUR_WIP_REPO",
+      "status": "in-flight",
+      "tags": ["open-source"]
+    },
+    {
+      "owner": "YOUR_GITHUB_USERNAME",
+      "repo": "YOUR_IDEA_REPO",
+      "status": "discovery"
+    }
+  ]
+}
