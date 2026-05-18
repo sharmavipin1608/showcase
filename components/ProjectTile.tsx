@@ -12,25 +12,37 @@ function formatPushedAt(pushedAt: string | null): string {
   return `${Math.floor(diffDays / 365)}y ago`
 }
 
-export function ProjectTile({ project }: { project: ProjectData }) {
+function TileInner({ project }: { project: ProjectData }) {
   const displayUrl = project.url ?? project.githubUrl
-  const linkLabel = project.url ? '→ live' : '→ github'
 
   return (
-    <div className="flex h-full flex-col gap-2 rounded-lg border border-[#30363d] bg-[#0d1117] p-4">
+    <>
+      {/* Top row: status + language */}
       <div className="flex items-center justify-between">
         <StatusBadge status={project.status} />
         {project.language && (
-          <span className="font-mono text-[10px] text-[#8b949e]">{project.language}</span>
+          <span className="rounded bg-[#21262d] px-2 py-0.5 text-[10px] text-[#8b949e]">
+            {project.language}
+          </span>
         )}
       </div>
 
-      <h2 className="font-mono text-sm text-[#e6edf3]">{project.repo}</h2>
+      {/* Repo name */}
+      <h2 className="text-sm font-semibold tracking-wide text-[#e6edf3] transition-colors group-hover:text-[#58a6ff]">
+        {project.repo}
+      </h2>
 
+      {/* Description */}
       {project.description && (
-        <p className="line-clamp-2 text-xs text-[#8b949e]">{project.description}</p>
+        <p
+          className="text-xs leading-relaxed text-[#8b949e]"
+          style={{ display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical', overflow: 'hidden' }}
+        >
+          {project.description}
+        </p>
       )}
 
+      {/* Tags */}
       {project.tags.length > 0 && (
         <div className="flex flex-wrap gap-1">
           {project.tags.map((tag) => (
@@ -39,22 +51,45 @@ export function ProjectTile({ project }: { project: ProjectData }) {
         </div>
       )}
 
-      <div className="mt-auto flex items-center justify-between pt-2 font-mono text-[10px] text-[#8b949e]">
+      {/* Bottom row: stars + timestamp + link hint */}
+      <div className="mt-auto flex items-center justify-between border-t border-[#21262d] pt-3 text-[10px] text-[#8b949e]">
         <div className="flex gap-3">
           {project.stars !== null && <span>★ {project.stars}</span>}
           {project.pushedAt && <span>{formatPushedAt(project.pushedAt)}</span>}
         </div>
         {displayUrl && (
-          <a
-            href={displayUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-[#58a6ff] hover:underline"
-          >
-            {linkLabel}
-          </a>
+          <span className="text-[#58a6ff]">
+            {project.url ? '→ live' : '→ github'}
+          </span>
         )}
       </div>
+    </>
+  )
+}
+
+const cardClass =
+  'group flex h-full flex-col gap-3 rounded-lg border border-[#30363d] bg-[#0d1117] p-5 transition-all duration-200 hover:border-[#58a6ff] hover:bg-[#161b22] hover:shadow-[0_0_0_1px_#58a6ff22]'
+
+export function ProjectTile({ project }: { project: ProjectData }) {
+  const displayUrl = project.url ?? project.githubUrl
+
+  if (displayUrl) {
+    return (
+      <a
+        href={displayUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        className={cardClass}
+        style={{ textDecoration: 'none' }}
+      >
+        <TileInner project={project} />
+      </a>
+    )
+  }
+
+  return (
+    <div className={cardClass}>
+      <TileInner project={project} />
     </div>
   )
 }
