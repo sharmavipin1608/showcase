@@ -12,6 +12,7 @@
       "owner": "sharmavipin1608",
       "repo": "interview-prep-agent",
       "status": "live",
+      "url": "http://interview-prep.duckdns.org",
       "tags": ["open-source"]
     },
     {
@@ -30,7 +31,7 @@
     {
       "owner": "sharmavipin1608",
       "repo": "FinancialPlayground",
-      "status": "live",
+      "status": "in-flight",
       "tags": ["open-source"]
     }
   ]
