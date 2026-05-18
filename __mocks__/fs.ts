@@ -1,9 +1,5 @@
 import { vi } from 'vitest'
-import { readFileSync as realReadFileSync } from 'node:fs'
 
-const fs = {
-  ...require('fs'),
-  readFileSync: vi.fn(),
-}
+export const readFileSync = vi.fn()
 
-module.exports = fs
+export default { readFileSync }
