@@ -1,23 +1,37 @@
 {
   "repos": [
     {
-      "owner": "YOUR_GITHUB_USERNAME",
-      "repo": "YOUR_FEATURED_REPO",
+      "owner": "sharmavipin1608",
+      "repo": "ClaudeTemplate",
       "status": "live",
-      "url": "https://your-live-url.vercel.app",
-      "tags": ["open-source"],
+      "url": "https://sharmavipin1608.github.io/ClaudeTemplate/",
+      "tags": ["open-source", "template"],
       "featured": true
     },
     {
-      "owner": "YOUR_GITHUB_USERNAME",
-      "repo": "YOUR_WIP_REPO",
-      "status": "in-flight",
+      "owner": "sharmavipin1608",
+      "repo": "interview-prep-agent",
+      "status": "live",
       "tags": ["open-source"]
     },
     {
-      "owner": "YOUR_GITHUB_USERNAME",
-      "repo": "YOUR_IDEA_REPO",
-      "status": "discovery"
+      "owner": "sharmavipin1608",
+      "repo": "JobsApplicationTracker",
+      "status": "live",
+      "tags": ["open-source"]
+    },
+    {
+      "owner": "sharmavipin1608",
+      "repo": "JobTracker-UI-v0",
+      "status": "live",
+      "url": "https://v0-job-tracker-ui-v0.vercel.app",
+      "tags": ["open-source"]
+    },
+    {
+      "owner": "sharmavipin1608",
+      "repo": "FinancialPlayground",
+      "status": "live",
+      "tags": ["open-source"]
     }
   ]
 }
