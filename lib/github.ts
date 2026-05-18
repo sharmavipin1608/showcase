@@ -15,7 +15,6 @@ export async function fetchRepoData(owner: string, repo: string): Promise<GitHub
   try {
     const res = await fetch(`https://api.github.com/repos/${owner}/${repo}`, {
       headers,
-      // @ts-expect-error next revalidate
       next: { revalidate: 3600 },
     })
 
