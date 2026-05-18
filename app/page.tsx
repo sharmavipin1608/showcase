@@ -9,8 +9,8 @@ export default async function Home() {
   const liveCount = projects.filter((p) => p.status === 'live').length
 
   return (
-    <main className="min-h-screen px-4 py-8 sm:px-8">
-      <div className="mx-auto max-w-5xl">
+    <main className="min-h-screen px-6 py-10 sm:px-10 lg:px-16">
+      <div className="mx-auto max-w-6xl">
         <MissionControlHeader liveCount={liveCount} />
         <BentoGrid projects={projects} />
       </div>
