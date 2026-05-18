@@ -1,10 +1,11 @@
 import type { RepoConfig, GitHubRepoData, ProjectData } from './types'
 
+if (!process.env.GITHUB_TOKEN) {
+  console.warn('[github] GITHUB_TOKEN not set — using unauthenticated requests (60 req/hr limit)')
+}
+
 export async function fetchRepoData(owner: string, repo: string): Promise<GitHubRepoData | null> {
   const token = process.env.GITHUB_TOKEN
-  if (!token) {
-    console.warn('[github] GITHUB_TOKEN not set — using unauthenticated requests (60 req/hr limit)')
-  }
 
   const headers: HeadersInit = {
     Accept: 'application/vnd.github+json',
@@ -33,9 +34,9 @@ export async function fetchRepoData(owner: string, repo: string): Promise<GitHub
       description: data.description ?? null,
       language: data.language ?? null,
       stargazers_count: data.stargazers_count ?? 0,
-      pushed_at: data.pushed_at,
+      pushed_at: data.pushed_at ?? '',
       homepage: data.homepage ?? null,
-      html_url: data.html_url,
+      html_url: data.html_url ?? '',
     }
   } catch (err) {
     console.warn(`[github] Network error fetching ${owner}/${repo}:`, err)
