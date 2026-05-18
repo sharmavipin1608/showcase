@@ -1,0 +1,89 @@
+<h2>Phase 1 — Dashboard Layout</h2>
+<p class="subtitle">How should the project grid be structured? Click to select.</p>
+
+<div class="cards">
+
+  <div class="card" data-choice="bento" onclick="toggleSelect(this)">
+    <div class="card-image" style="background:#0d1117;padding:14px;border-radius:6px;font-family:'SF Mono',monospace;font-size:11px;color:#e6edf3;min-height:180px;">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;border-bottom:1px solid #21262d;padding-bottom:8px;">
+        <span style="color:#58a6ff;letter-spacing:2px;font-size:12px;font-weight:bold;">MISSION CONTROL</span>
+        <span style="color:#8b949e;font-size:10px;">$ status --all</span>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px;">
+        <div style="border:1px solid #30363d;border-radius:6px;padding:8px;grid-column:span 2;">
+          <div style="display:flex;justify-content:space-between;">
+            <span style="color:#3fb950;font-size:9px;">● LIVE</span>
+            <span style="color:#8b949e;font-size:9px;">TypeScript</span>
+          </div>
+          <div style="margin-top:4px;font-size:11px;">llm-orchestration-engine</div>
+          <div style="color:#58a6ff;font-size:9px;margin-top:2px;">→ myapp.vercel.app</div>
+          <div style="margin-top:4px;display:flex;gap:4px;">
+            <span style="background:#388bfd26;color:#58a6ff;padding:1px 6px;border-radius:10px;font-size:9px;">open-source</span>
+          </div>
+        </div>
+        <div style="border:1px solid #30363d;border-radius:6px;padding:8px;">
+          <div style="color:#d29922;font-size:9px;">◐ IN FLIGHT</div>
+          <div style="margin-top:4px;font-size:10px;">rag-pipeline</div>
+          <div style="color:#8b949e;font-size:9px;margin-top:2px;">Python</div>
+        </div>
+        <div style="border:1px solid #30363d;border-radius:6px;padding:8px;">
+          <div style="color:#6e7681;font-size:9px;">○ DISCOVERY</div>
+          <div style="margin-top:4px;font-size:10px;">dist-cache</div>
+          <div style="color:#8b949e;font-size:9px;margin-top:2px;">backlog</div>
+        </div>
+        <div style="border:1px solid #30363d;border-radius:6px;padding:8px;">
+          <div style="color:#3fb950;font-size:9px;">● LIVE</div>
+          <div style="margin-top:4px;font-size:10px;">claude-template</div>
+          <div style="display:flex;gap:4px;margin-top:4px;">
+            <span style="background:#388bfd26;color:#58a6ff;padding:1px 6px;border-radius:10px;font-size:9px;">template</span>
+          </div>
+        </div>
+        <div style="border:1px solid #388bfd33;border-radius:6px;padding:8px;display:flex;align-items:center;justify-content:center;">
+          <span style="color:#30363d;font-size:16px;">+</span>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>A — Bento Grid</h3>
+      <p>Variable-size tiles in a grid. Featured/large projects get more real estate. Compact, scannable, spatial.</p>
+    </div>
+  </div>
+
+  <div class="card" data-choice="statusboard" onclick="toggleSelect(this)">
+    <div class="card-image" style="background:#0d1117;padding:14px;border-radius:6px;font-family:'SF Mono',monospace;font-size:11px;color:#e6edf3;min-height:180px;">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;border-bottom:1px solid #21262d;padding-bottom:8px;">
+        <span style="color:#58a6ff;letter-spacing:2px;font-size:12px;font-weight:bold;">MISSION CONTROL</span>
+        <span style="color:#8b949e;font-size:10px;">$ status --all</span>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:5px;">
+        <div style="border-left:2px solid #3fb950;padding:6px 10px;background:#3fb95010;border-radius:0 4px 4px 0;display:flex;justify-content:space-between;align-items:center;">
+          <div>
+            <span style="color:#3fb950;font-size:9px;">● LIVE</span>
+            <span style="color:#e6edf3;font-size:11px;margin-left:8px;">llm-orchestration-engine</span>
+          </div>
+          <div style="display:flex;gap:6px;align-items:center;">
+            <span style="background:#388bfd26;color:#58a6ff;padding:1px 6px;border-radius:10px;font-size:9px;">open-source</span>
+            <span style="color:#58a6ff;font-size:9px;">→ myapp.vercel.app</span>
+          </div>
+        </div>
+        <div style="border-left:2px solid #3fb950;padding:6px 10px;background:#3fb95010;border-radius:0 4px 4px 0;display:flex;justify-content:space-between;">
+          <div><span style="color:#3fb950;font-size:9px;">● LIVE</span><span style="color:#e6edf3;font-size:11px;margin-left:8px;">claude-template</span></div>
+          <span style="background:#388bfd26;color:#58a6ff;padding:1px 6px;border-radius:10px;font-size:9px;">template</span>
+        </div>
+        <div style="border-left:2px solid #d29922;padding:6px 10px;background:#d2992210;border-radius:0 4px 4px 0;">
+          <span style="color:#d29922;font-size:9px;">◐ IN FLIGHT</span><span style="color:#e6edf3;font-size:11px;margin-left:8px;">rag-pipeline</span>
+        </div>
+        <div style="border-left:2px solid #6e7681;padding:6px 10px;background:#6e768110;border-radius:0 4px 4px 0;">
+          <span style="color:#6e7681;font-size:9px;">○ DISCOVERY</span><span style="color:#e6edf3;font-size:11px;margin-left:8px;">distributed-cache</span>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>B — Status Board (list)</h3>
+      <p>Grouped by status, left-bordered rows like a deployment log. Every project gets equal space. Closer to a real ops dashboard.</p>
+    </div>
+  </div>
+
+</div>
+
+<p class="subtitle" style="margin-top:16px;">Both use the same data model. This is purely a layout choice.</p>
