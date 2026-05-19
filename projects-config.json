@@ -13,38 +13,38 @@
       "repo": "interview-prep-agent",
       "status": "live",
       "url": "http://interview-prep.duckdns.org",
-      "tags": ["open-source"]
+      "tags": []
     },
     {
       "owner": "sharmavipin1608",
       "repo": "JobsApplicationTracker",
       "status": "live",
-      "tags": ["open-source"]
+      "tags": []
     },
     {
       "owner": "sharmavipin1608",
       "repo": "JobTracker-UI-v0",
       "status": "live",
       "url": "https://v0-job-tracker-ui-v0.vercel.app",
-      "tags": ["open-source"]
+      "tags": []
     },
     {
       "owner": "sharmavipin1608",
       "repo": "FinancialPlayground",
       "status": "in-flight",
-      "tags": ["open-source"]
+      "tags": []
     },
     {
       "owner": "sharmavipin1608",
       "repo": "TravelPlanner",
       "status": "discovery",
-      "tags": ["open-source"]
+      "tags": []
     },
     {
       "owner": "sharmavipin1608",
       "repo": "AssemblyAI",
       "status": "discovery",
-      "tags": ["open-source"]
+      "tags": []
     }
   ]
 }
