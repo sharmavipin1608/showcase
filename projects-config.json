@@ -33,6 +33,18 @@
       "repo": "FinancialPlayground",
       "status": "in-flight",
       "tags": ["open-source"]
+    },
+    {
+      "owner": "sharmavipin1608",
+      "repo": "TravelPlanner",
+      "status": "discovery",
+      "tags": ["open-source"]
+    },
+    {
+      "owner": "sharmavipin1608",
+      "repo": "AssemblyAI",
+      "status": "discovery",
+      "tags": ["open-source"]
     }
   ]
 }
