@@ -1,4 +1,12 @@
-export function MissionControlHeader({ liveCount }: { liveCount: number }) {
+export function MissionControlHeader({
+  liveCount,
+  inFlightCount,
+  discoveryCount,
+}: {
+  liveCount: number
+  inFlightCount: number
+  discoveryCount: number
+}) {
   return (
     <div className="mb-8 flex items-center justify-between border-b border-[#21262d] pb-5">
       <div>
@@ -9,7 +17,11 @@ export function MissionControlHeader({ liveCount }: { liveCount: number }) {
       </div>
       <div className="text-right text-xs text-[#8b949e]">
         <div>$ status --all</div>
-        <div className="mt-1 text-[#3fb950]">● {liveCount} live</div>
+        <div className="mt-1 flex items-center justify-end gap-3">
+          <span className="text-[#3fb950]">● {liveCount} live</span>
+          <span className="text-[#d29922]">◐ {inFlightCount} in-flight</span>
+          <span className="text-[#6e7681]">○ {discoveryCount} discovery</span>
+        </div>
       </div>
     </div>
   )
