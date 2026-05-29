@@ -21,6 +21,15 @@ export interface GitHubRepoData {
   pushed_at: string
   homepage: string | null
   html_url: string
+  commit_count: number | null
+}
+
+export interface ActivityEvent {
+  id: string
+  repo: string
+  message: string
+  branch: string
+  createdAt: string
 }
 
 export interface ProjectData {
@@ -36,4 +45,5 @@ export interface ProjectData {
   stars: number | null
   pushedAt: string | null
   githubUrl: string | null
+  commitCount: number | null
 }

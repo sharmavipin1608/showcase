@@ -8,7 +8,7 @@ export function MissionControlHeader({
   discoveryCount: number
 }) {
   return (
-    <div className="mb-8 flex items-center justify-between border-b border-[#21262d] pb-5">
+    <div className="flex items-center justify-between border-b border-[#21262d] pb-5">
       <div>
         <h1 className="text-xl font-bold tracking-[0.25em] text-[#58a6ff]">
           MISSION CONTROL

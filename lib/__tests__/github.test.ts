@@ -2,6 +2,10 @@ import { describe, it, expect, vi, beforeEach } from 'vitest'
 import { fetchRepoData, mergeProjectData } from '../github'
 import type { RepoConfig, GitHubRepoData } from '../types'
 
+const mockHeaders = (link?: string) => ({
+  get: (key: string) => (key === 'link' && link ? link : null),
+})
+
 describe('fetchRepoData', () => {
   beforeEach(() => {
     vi.stubGlobal('fetch', vi.fn())
@@ -16,11 +20,18 @@ describe('fetchRepoData', () => {
       homepage: 'https://example.com',
       html_url: 'https://github.com/alice/my-repo',
     }
-    vi.mocked(fetch).mockResolvedValue({
-      ok: true,
-      status: 200,
-      json: async () => mockPayload,
-    } as Response)
+    // First call: repo data. Second call: commit count (returns link header with page=47)
+    vi.mocked(fetch)
+      .mockResolvedValueOnce({
+        ok: true, status: 200,
+        json: async () => mockPayload,
+        headers: mockHeaders(),
+      } as unknown as Response)
+      .mockResolvedValueOnce({
+        ok: true, status: 200,
+        json: async () => [{}],
+        headers: mockHeaders('<https://api.github.com/repos/alice/my-repo/commits?per_page=1&page=47>; rel="last"'),
+      } as unknown as Response)
 
     const result = await fetchRepoData('alice', 'my-repo')
     expect(result).toEqual({
@@ -30,15 +41,15 @@ describe('fetchRepoData', () => {
       pushed_at: '2024-01-01T00:00:00Z',
       homepage: 'https://example.com',
       html_url: 'https://github.com/alice/my-repo',
+      commit_count: 47,
     })
   })
 
   it('returns null on 404', async () => {
     vi.mocked(fetch).mockResolvedValue({
-      ok: false,
-      status: 404,
-      statusText: 'Not Found',
-    } as Response)
+      ok: false, status: 404, statusText: 'Not Found',
+      headers: mockHeaders(),
+    } as unknown as Response)
     const result = await fetchRepoData('alice', 'missing')
     expect(result).toBeNull()
   })
@@ -51,10 +62,9 @@ describe('fetchRepoData', () => {
 
   it('returns null on non-404 error response', async () => {
     vi.mocked(fetch).mockResolvedValue({
-      ok: false,
-      status: 500,
-      statusText: 'Internal Server Error',
-    } as Response)
+      ok: false, status: 500, statusText: 'Internal Server Error',
+      headers: mockHeaders(),
+    } as unknown as Response)
     const result = await fetchRepoData('alice', 'my-repo')
     expect(result).toBeNull()
   })
@@ -77,6 +87,7 @@ describe('mergeProjectData', () => {
     pushed_at: '2024-06-01T00:00:00Z',
     homepage: 'https://github-homepage.com',
     html_url: 'https://github.com/alice/my-app',
+    commit_count: 120,
   }
 
   it('prefers config url over github homepage', () => {
@@ -94,6 +105,7 @@ describe('mergeProjectData', () => {
     expect(result.stars).toBeNull()
     expect(result.language).toBeNull()
     expect(result.githubUrl).toBeNull()
+    expect(result.commitCount).toBeNull()
   })
 
   it('defaults tags to empty array and featured to false when not set', () => {
@@ -110,5 +122,6 @@ describe('mergeProjectData', () => {
     expect(result.stars).toBe(10)
     expect(result.pushedAt).toBe('2024-06-01T00:00:00Z')
     expect(result.githubUrl).toBe('https://github.com/alice/my-app')
+    expect(result.commitCount).toBe(120)
   })
 })
