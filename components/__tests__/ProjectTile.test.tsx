@@ -11,6 +11,7 @@ const base: ProjectData = {
   tags: [],
   featured: false,
   techStack: [],
+  commitCount: null,
   description: null,
   language: null,
   stars: null,
