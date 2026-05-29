@@ -51,6 +51,7 @@ export function mergeProjectData(config: RepoConfig, github: GitHubRepoData | nu
     url: config.url ?? github?.homepage ?? null,
     tags: config.tags ?? [],
     featured: config.featured ?? false,
+    techStack: config.techStack ?? [],
     description: github?.description ?? null,
     language: github?.language ?? null,
     stars: github?.stargazers_count ?? null,

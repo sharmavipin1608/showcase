@@ -7,6 +7,7 @@ export interface RepoConfig {
   url?: string
   tags?: string[]
   featured?: boolean
+  techStack?: string[]
 }
 
 export interface ProjectsConfig {
@@ -29,6 +30,7 @@ export interface ProjectData {
   url: string | null
   tags: string[]
   featured: boolean
+  techStack: string[]
   description: string | null
   language: string | null
   stars: number | null

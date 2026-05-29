@@ -6,39 +6,45 @@
       "status": "live",
       "url": "https://sharmavipin1608.github.io/ClaudeTemplate/",
       "tags": ["open-source", "template"],
-      "featured": true
+      "featured": true,
+      "techStack": ["Claude Code", "Python", "Shell"]
     },
     {
       "owner": "sharmavipin1608",
       "repo": "interview-prep-agent",
       "status": "live",
       "url": "http://interview-prep.duckdns.org",
-      "tags": []
+      "tags": [],
+      "techStack": ["Spring Boot", "Spring AI", "React"]
     },
     {
       "owner": "sharmavipin1608",
       "repo": "JobsApplicationTracker",
       "status": "live",
-      "tags": []
+      "tags": [],
+      "techStack": ["Java", "Spring Boot"]
     },
     {
       "owner": "sharmavipin1608",
       "repo": "JobTracker-UI-v0",
       "status": "live",
       "url": "https://v0-job-tracker-ui-v0.vercel.app",
-      "tags": []
+      "tags": [],
+      "techStack": ["Next.js", "TypeScript", "Shadcn/UI"]
     },
     {
       "owner": "sharmavipin1608",
       "repo": "FinancialPlayground",
       "status": "in-flight",
-      "tags": []
+      "tags": [],
+      "techStack": ["Next.js", "FastAPI", "Supabase"]
     },
     {
       "owner": "sharmavipin1608",
       "repo": "TravelPlanner",
-      "status": "discovery",
-      "tags": []
+      "status": "live",
+      "tags": [],
+      "techStack": ["Next.js", "Supabase", "Claude API"]
     },
     {
       "owner": "sharmavipin1608",

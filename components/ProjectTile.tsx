@@ -1,5 +1,6 @@
 import { StatusBadge } from './StatusBadge'
 import { TagPill } from './TagPill'
+import { TechPill } from './TechPill'
 import type { ProjectData } from '@/lib/types'
 
 function formatPushedAt(pushedAt: string | null): string {
@@ -17,14 +18,19 @@ function TileInner({ project }: { project: ProjectData }) {
 
   return (
     <>
-      {/* Top row: status + language */}
-      <div className="flex items-center justify-between">
+      {/* Top row: status + tech pills */}
+      <div className="flex items-start justify-between gap-2">
         <StatusBadge status={project.status} />
-        {project.language && (
-          <span className="rounded bg-[#21262d] px-2 py-0.5 text-[10px] text-[#8b949e]">
-            {project.language}
-          </span>
-        )}
+        {(() => {
+          const techs = project.techStack.length > 0
+            ? project.techStack.slice(0, 3)
+            : project.language ? [project.language] : []
+          return techs.length > 0 ? (
+            <div className="flex flex-wrap justify-end gap-1">
+              {techs.map((t) => <TechPill key={t} tech={t} />)}
+            </div>
+          ) : null
+        })()}
       </div>
 
       {/* Repo name */}

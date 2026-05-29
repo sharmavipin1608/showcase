@@ -10,6 +10,7 @@ const base: ProjectData = {
   url: null,
   tags: [],
   featured: false,
+  techStack: [],
   description: null,
   language: null,
   stars: null,
